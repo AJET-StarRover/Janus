@@ -11,15 +11,15 @@ window.editMode = false;
 // ── Données par défaut (chargées si localStorage vide)
 const DEFAULT_DATA = {
   // index.html
-  'nav-name': 'VOTRE NOM',
-  'hero-eyebrow': 'Compositeur · Paris',
+  'nav-name': 'JANUS',
+  'hero-eyebrow': 'Compositeur · Toulon',
   'hero-title': 'Votre<br>Nom',
   'hero-sub': 'Musiques orchestrales',
   'hero-desc': 'Des œuvres construites dans le silence, entre tension et souffle — pour orchestre, ensemble, et parfois rien d\'autre que la nuit.',
   'about-bio': 'Remplacez ce texte par votre biographie. Parlez de votre parcours, de vos influences, de ce qui vous pousse à composer.',
-  'about-location': 'Basé à Paris.',
-  'footer-name': '© 2025 Votre Nom',
-  'footer-contact': 'contact@votresite.com',
+  'about-location': 'Basé à Toulon.',
+  'footer-name': '© 2026 Janus',
+  'footer-contact': 'athdcomposer@gmail.com',
 
   // Entrées journal films
   films: [
