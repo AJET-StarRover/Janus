@@ -8,12 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --bg: #1e1c18; --text: #e8e2d8; --muted: rgba(232,226,216,0.50); --faint: rgba(232,226,216,0.14); }
+    :root { --bg: #6e5f4b; --text: #e8e2d8; --muted: rgba(232,226,216,0.50); --faint: rgba(232,226,216,0.14); }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'Cormorant Garamond', serif; min-height: 100vh; overflow-x: hidden; }
     body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 100; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"); opacity: 0.6; }
 
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--faint); background: rgba(30,28,24,0.88); backdrop-filter: blur(12px); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--faint); background: rgba(110,95,75,0.88); backdrop-filter: blur(12px); }
     .nav-name { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.25em; color: var(--text); text-decoration: none; opacity: 0.9; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.25s; }
