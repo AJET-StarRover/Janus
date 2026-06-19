@@ -36,13 +36,17 @@
     .player-card { background: rgba(232,226,216,0.03); border: 0.5px solid var(--faint); border-radius: 4px; overflow: hidden; }
     .player-label { font-family: 'Inter', sans-serif; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(232,226,216,0.3); padding: 1.25rem 1.5rem 0.75rem; }
 
-    /* CARTE VIDÉO — texte + iframe côte à côte */
-    .video-card { background: rgba(232,226,216,0.03); border: 1.5px solid var(--faint); border-radius: 4px; overflow: hidden; display: grid; grid-template-columns: 1fr 1.6fr; }
-    .video-text { padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; gap: 0.6rem; border-right: 0.5px solid var(--faint); }
-    .video-label { font-family: 'Inter', sans-serif; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(232,226,216,0.3); }
-    .video-title { font-size: 17px; line-height: 1.35; color: var(--text); }
-    .video-desc { font-style: italic; font-size: 13px; line-height: 1.65; color: rgba(232,226,216,0.4); }
-    .video-frame { display: block; width: 100%; aspect-ratio: 16/9; border: none; }
+    /* SECTION FILM — pleine largeur */
+    .film-section { border-top: 0.5px solid var(--faint); padding: 5rem 3rem; max-width: 1200px; margin: 0 auto; }
+    .film-header { display: flex; align-items: baseline; gap: 2rem; margin-bottom: 2.5rem; }
+    .film-label { font-family: 'Inter', sans-serif; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(232,226,216,0.3); white-space: nowrap; }
+    .film-title { font-family: 'Cinzel', serif; font-size: clamp(22px, 3vw, 34px); font-weight: 400; color: var(--text); }
+    .film-body { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start; }
+    .film-frame-wrap { border: 0.5px solid var(--faint); border-radius: 4px; overflow: hidden; }
+    .film-frame { display: block; width: 100%; aspect-ratio: 16/9; border: none; }
+    .film-info { display: flex; flex-direction: column; gap: 1.5rem; padding-top: 0.5rem; }
+    .film-desc { font-style: italic; font-size: 16px; line-height: 1.85; color: rgba(232,226,216,0.5); }
+    .film-meta { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: rgba(232,226,216,0.25); line-height: 1.9; }
 
     /* SECTIONS */
     .sections-grid { border-top: 0.5px solid var(--faint); max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); }
@@ -61,12 +65,14 @@
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
     @media (max-width: 900px) {
-      .video-card { grid-template-columns: 1fr; }
-      .video-text { border-right: none; border-bottom: 0.5px solid var(--faint); }
+      .film-body { grid-template-columns: 1fr; }
+      .film-info { padding-top: 0; }
     }
     @media (max-width: 768px) {
       nav { padding: 1.25rem 1.5rem; } .nav-links { gap: 1.5rem; }
       .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 3rem; }
+      .film-section { padding: 3rem 1.5rem; }
+      .film-header { flex-direction: column; gap: 0.5rem; }
       .sections-grid { grid-template-columns: 1fr; }
       .section-tile { border-right: none; border-bottom: 0.5px solid var(--faint); padding: 2rem 1.5rem; }
       footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; }
@@ -97,7 +103,7 @@
         <a href="#about" class="hero-cta">À propos →</a>
       </div>
 
-      <!-- Colonne droite : SoundCloud + vidéo -->
+      <!-- Colonne droite : SoundCloud -->
       <div class="hero-right">
 
         <!-- Lecteur SoundCloud -->
@@ -110,15 +116,19 @@
           </iframe>
         </div>
 
-        <!-- Vidéo + texte côte à côte -->
-        <div class="video-card">
-          <div class="video-text">
-            <p class="video-label">À l'image</p>
-            <p class="video-title" data-edit="video-title">Journal d'un détective</p>
-            <p class="video-desc" data-edit="video-desc">J'ai composé la musique pour ce court-métrage écrit et réalisé par Sabri Karimjee, avec Missipsa.</p>
-          </div>
+      </div>
+    </section>
+
+    <!-- Court métrage en vedette — section pleine largeur -->
+    <section class="film-section">
+      <div class="film-header">
+        <span class="film-label">À l'image</span>
+        <h2 class="film-title" data-edit="video-title">Journal d'un détective</h2>
+      </div>
+      <div class="film-body">
+        <div class="film-frame-wrap">
           <iframe
-            class="video-frame"
+            class="film-frame"
             src="https://www.youtube.com/embed/Y5x_jffDlg8?si=EVIkeJJbywXchHkR"
             title="Journal d'un détective"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -126,7 +136,10 @@
             allowfullscreen>
           </iframe>
         </div>
-
+        <div class="film-info">
+          <p class="film-desc" data-edit="video-desc">J'ai composé la musique pour ce court-métrage écrit et réalisé par Sabri Karimjee, avec Missipsa.</p>
+          <p class="film-meta">Réalisation · Sabri Karimjee<br>Avec · Missipsa<br>Musique originale · Janus</p>
+        </div>
       </div>
     </section>
 
